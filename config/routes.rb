@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :high_scores
+  resources :the_data_dictionary
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

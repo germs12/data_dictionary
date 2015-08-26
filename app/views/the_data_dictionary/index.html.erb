@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>The Data Dictionary</h1>
+<%= form_for :the_data_dictionary, :url => 'the_data_dictionary' do |f| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Table</th>
+        <th>Column</th>
+        <th colspan="30">Definition</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tdd.each do |dd| %>
+        <% dd[1].each do |cc| %>
+          <tr>
+            <td><%= dd[0] %></td>
+            <td><%= cc[0] %></td>
+            <td colspan="30"><textarea cols="50" rows="7" name="<%= dd[0] + '[' + cc[0] + ']' %>"><%= cc[1] %></textarea></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <input type="submit">
+<% end %>
+<br>
+
