@@ -12,6 +12,11 @@ class TheDataDictionaryController < ApplicationController
     redirect_to the_data_dictionary_index_url, notice: "Successfully updated"
   end
 
+  def load
+    TheDataDictionary.run
+    redirect_to the_data_dictionary_index_url, notice: "The Data Dictionary has successfully loaded"
+  end
+
   # # GET /high_scores/1
   # # GET /high_scores/1.json
   # def show
